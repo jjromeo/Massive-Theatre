@@ -4,4 +4,8 @@ class Row
        @seats = []
        50.times { @seats << Seat.new}
     end 
+
+    def book_seat!(seat_number)
+
+    end
 end
