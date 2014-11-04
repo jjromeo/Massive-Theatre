@@ -9,9 +9,9 @@ describe Theatre do
             expect(theatre.rows.count).to eq 100
         end
 
-       xit 'each row has 50 seats' do 
+       it 'each row has 50 seats' do 
             theatre = Theatre.new
-            expect(theatre.rows.all? {|row| row.seats.count == 50}). to_be true
+            expect(theatre.rows.all? {|row| row.seats.count == 50}).to eq true
         end
 
     end
