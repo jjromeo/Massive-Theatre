@@ -6,6 +6,6 @@ class Row
     end 
 
     def book_seat!(seat_number)
-
+        seats[seat_number - 1].book!
     end
 end
