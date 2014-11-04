@@ -9,6 +9,11 @@ describe Theatre do
             expect(theatre.rows.count).to eq 100
         end
 
+        it 'each row has 50 seats' do 
+            theatre = Theatre.new
+            expect(theatre.rows.all? {|row| row.seats.count == 50}). to_be true
+        end
+
     end
 
 end
