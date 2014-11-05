@@ -29,6 +29,11 @@ describe Theatre do
         it 'will not accept a booking that is for more than 5 people' do
             expect {theatre.make_booking("(10,30:5,30:10)")}.to raise_error "Sorry, 5 is the maximum number of bookings"
         end
+
+        it 'will accept a booking that is for only 1 place' do 
+            expect(theatre.rows[90].seats[49]).to receive(:book!)
+            theatre.make_booking("(391,90:49,90:49)")
+        end
     end
 
 end

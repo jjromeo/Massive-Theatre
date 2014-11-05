@@ -34,5 +34,9 @@ class Theatre
         end
     end
 
+    def same_seat?
+        @first_row_and_seat[1] == @last_row_and_seat[1]
+    end
+
 end
 
