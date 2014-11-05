@@ -18,10 +18,7 @@ describe Theatre do
 
     context 'taking bookings' do 
         it 'can accept a group booking' do 
-            expect(theatre.rows[67].seats[44]).to receive(:book!)
-            expect(theatre.rows[67].seats[45]).to receive(:book!)
-            expect(theatre.rows[67].seats[46]).to receive(:book!)
-            expect(theatre.rows[67].seats[47]).to receive(:book!)
+            theatre.rows[67].seats[44..47].each { |seat| expect(seat).to receive(:book!)}
             theatre.make_booking("(1,67:44,67:47)")       
         end
     end
