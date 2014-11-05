@@ -18,6 +18,10 @@ class Row
             elsif seats[seat_number + 2].booked? && !(seats[seat_number + 1].booked?)
                 raise "Sorry you cannot book if it will leave a gap of 1!"
             end
+        elsif seats[seat_number - 2]
+            if seats[seat_number - 2].booked? && !(seats[seat_number - 1].booked?)
+                raise "Sorry you cannot book if it will leave a gap of 1!"
+            end
         elsif seats[seat_number + 2]
             if seats[seat_number + 2].booked? && !(seats[seat_number + 1].booked?)
                 raise "Sorry you cannot book if it will leave a gap of 1!"
