@@ -24,14 +24,19 @@ class Row
     
     def check_gap_behind(seat_number)
         if seats[seat_number - 2].booked? && !(seats[seat_number - 1].booked?)
-            raise "Sorry you cannot book if it will leave a gap of 1!"
+            gap_warning
         end
     end
 
     def check_gap_in_front(seat_number)
         if seats[seat_number + 2].booked? && !(seats[seat_number + 1].booked?)
-            raise "Sorry you cannot book if it will leave a gap of 1!"
+            gap_warning
         end
     end
+    
+    def gap_warning
+        raise "Sorry you cannot book if it will leave a gap of 1!"
+    end
+
 
 end
