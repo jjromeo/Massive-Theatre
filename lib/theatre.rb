@@ -19,12 +19,20 @@ class Theatre
     end
 
     def check_and_book
+        quantity_check
         if @first_row_and_seat[0] == @last_row_and_seat[0]
-           booking_range = (@first_row_and_seat[1].to_i..@last_row_and_seat[1].to_i)
-           booking_range.map {|seat| rows[@first_row_and_seat[0].to_i].book_seat!(seat)} 
+           @booking_range = (@first_row_and_seat[1].to_i..@last_row_and_seat[1].to_i)
+           @booking_range.map {|seat| rows[@first_row_and_seat[0].to_i].book_seat!(seat)} 
         else
             raise "Bookings must stay on the same row!"
         end
     end
+
+    def quantity_check
+        if @last_row_and_seat[1].to_i -  @first_row_and_seat[1].to_i >= 5
+            raise "Sorry, 5 is the maximum number of bookings"
+        end
+    end
+
 end
 

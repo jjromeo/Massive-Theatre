@@ -21,6 +21,14 @@ describe Theatre do
             theatre.rows[67].seats[44..47].each { |seat| expect(seat).to receive(:book!)}
             theatre.make_booking("(1,67:44,67:47)")       
         end
+
+        it 'will not accept a booking that is not all on the same row' do 
+            expect {theatre.make_booking("(194,44:48,45:49)")}.to raise_error "Bookings must stay on the same row!"
+        end
+
+        it 'will not accept a booking that is for more than 5 people' do
+            expect {theatre.make_booking("(10,30:5,30:10)")}.to raise_error "Sorry, 5 is the maximum number of bookings"
+        end
     end
 
 end
