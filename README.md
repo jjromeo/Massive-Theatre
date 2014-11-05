@@ -15,3 +15,9 @@ rejected. To test your system, a smaller sample file (sample_booking_requests) i
 
 
 >The text file of bookings contains one booking per line, where a booking is of the following form: (<id>,<index of first seat row>:<index of first seat within row>,<index of last seat row>:<index of last seat within row>), Rows and seats are both 0-indexed. Note the trailing comma is absent on the final line.
+
+
+How to use
+===============
+1. Git clone repository.
+2. run 'ruby process_bookings.rb'
