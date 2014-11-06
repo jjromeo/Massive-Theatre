@@ -30,5 +30,13 @@ describe BookingHandler do
             expect(booker.rejected_bookings.first).to eq "Booking number 32: Sorry, 5 is the maximum number of bookings"
         end
 
+        it 'knows how many of it\'s seats are booked' do 
+            expect(booker.booked_seats.count).to eq(987)
+        end
+
+        it 'knows how many places it has available' do 
+            expect(booker.available_seats.count).to eq(4013)
+        end
+
     end
 end
