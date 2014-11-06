@@ -4,7 +4,7 @@ require './lib/theatre.rb'
 require './lib/booking_handler.rb'
 
 booker = BookingHandler.new
-puts "Welcome to Theatre Booking Manager"
+puts "Welcome to the Theatre Booking Processor app"
 puts "Please enter the file you would like to process bookings from"
 booker.process_bookings(gets.chomp.to_s)
 puts "====================================="
