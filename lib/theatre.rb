@@ -22,7 +22,7 @@ class Theatre
         quantity_check
         if @first_row_and_seat[0] == @last_row_and_seat[0]
            @booking_range = (@first_row_and_seat[1].to_i..@last_row_and_seat[1].to_i)
-           @booking_range.map {|seat| rows[@first_row_and_seat[0].to_i].book_seat!(seat)} 
+           @booking_range.map {|seat| rows[@first_row_and_seat[0].to_i].book_seat(seat)} 
         else
             raise "Bookings must stay on the same row!"
         end

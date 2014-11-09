@@ -5,19 +5,20 @@ class Row
        50.times { @seats << Seat.new}
     end 
 
-    def book_seat!(seat_number)
+    def book_seat(seat_number)
         check_for_gaps(seat_number)
-        seats[seat_number].book!
+        seats[seat_number].book
     end
 
     private
     def check_for_gaps(seat_number)
-        if seats[seat_number - 2] && seats[seat_number + 2] 
+        behind, in_front = seats[seat_number - 2], seats[seat_number + 2]
+        if behind && in_front 
             check_gap_behind(seat_number)
             check_gap_in_front(seat_number)
-        elsif seats[seat_number - 2]
+        elsif behind 
             check_gap_behind(seat_number)
-        elsif seats[seat_number + 2]
+        elsif in_front 
             check_gap_in_front(seat_number)
         end
     end

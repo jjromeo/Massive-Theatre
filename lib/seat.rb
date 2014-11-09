@@ -8,7 +8,7 @@ class Seat
         @booked
     end
 
-    def book!
+    def book
         if @booked
             raise "This seat is already booked!"
         else
