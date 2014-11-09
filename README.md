@@ -20,4 +20,5 @@ rejected. To test your system, a smaller sample file (sample_booking_requests) i
 How to use
 ===============
 1. Git clone repository.
-2. run 'ruby process_bookings.rb'
+2. run 'ruby booking_processor.rb'
+You will be prompted to enter a file, if you enter ./booking_requests.txt you will get the default results, another file in the same format would also be readable.
