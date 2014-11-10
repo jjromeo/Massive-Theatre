@@ -30,14 +30,14 @@ class BookingHandler
 
     def booked_seats
         theatre.rows.each do |row|
-            row.seats.select {|seat| seat.booked?}.each { |booked_seat| @booked_places << booked_seat}
+            row.seats.select {|seat| seat.booked?}.each {|booked_seat| @booked_places << booked_seat}
         end
             @booked_places
     end
     
     def available_seats
         theatre.rows.each do |row|
-            row.seats.reject {|seat| seat.booked?}.each { |available_seat| @available_places << available_seat}
+            row.seats.reject {|seat| seat.booked?}.each {|available_seat| @available_places << available_seat}
         end
             @available_places
     end

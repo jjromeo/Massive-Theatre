@@ -29,8 +29,7 @@ class Theatre
     end
 
     def book_seats(row, first_seat, last_seat)
-           @booking_range = (first_seat.to_i..last_seat.to_i)
-           @booking_range.map {|seat| rows[row.to_i].book_seat(seat)} 
+        (first_seat.to_i..last_seat.to_i).map {|seat| rows[row.to_i].book_seat(seat)} 
     end
 
     def quantity_check
