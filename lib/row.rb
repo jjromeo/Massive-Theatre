@@ -14,8 +14,7 @@ class Row
     def check_for_gaps(seat_number)
         behind, in_front = seats[seat_number - 2], seats[seat_number + 2]
         if behind && in_front 
-            check_gap_behind(seat_number)
-            check_gap_in_front(seat_number)
+            check_both(seat_number)
         elsif behind 
             check_gap_behind(seat_number)
         elsif in_front 
@@ -28,6 +27,12 @@ class Row
             gap_warning
         end
     end
+
+    def check_both(seat_number)
+            check_gap_behind(seat_number)
+            check_gap_in_front(seat_number)
+    end
+
 
     def check_gap_in_front(seat_number)
         if seats[seat_number + 2].booked? && !(seats[seat_number + 1].booked?)
