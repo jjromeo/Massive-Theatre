@@ -15,9 +15,7 @@ class BookingHandler
     end
 
     def parse_bookings(file)
-        file = File.open(file, "r")
-        file.each_line {|line| @parsed_bookings << "#{line.slice(0..-4)}"}
-        file.close
+        File.open(file, "r").each_line {|line| @parsed_bookings << "#{line.slice(0..-4)}"}.close
     end
 
     def book_requests
