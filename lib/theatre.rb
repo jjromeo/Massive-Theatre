@@ -28,6 +28,8 @@ class Theatre
         end
     end
 
+    def row_check(first_row, last_row)
+
     def book_seats(row, first_seat, last_seat)
         (first_seat.to_i..last_seat.to_i).map {|seat| rows[row.to_i].book_seat(seat)} 
     end
