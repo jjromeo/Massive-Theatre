@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/jjromeo/Massive-Theatre/badges/gpa.svg)](https://codeclimate.com/github/jjromeo/Massive-Theatre)
 Massive-Theatre
 ===============
 
